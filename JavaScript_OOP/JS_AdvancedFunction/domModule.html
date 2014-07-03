@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>domModule</title>   
+</head>
+<body>
+    <div id="wrapper">
+        <a class="button" href="#">ClickMe</a>
+        <br />
+        <button class="add50divs">Add 50 divs</button>
+        <br />
+        <nav id="main-nav">
+            <ul>
+                <li>main-nav first</li>
+                <li>main-nav second</li>
+                <li>main-nav third</li>
+                <li>main-nav fourth</li>
+                <li>main-nav fifth</li>
+            </ul>
+        </nav>
+        <br />
+        <ul>
+            <li>first</li>
+            <li>second</li>
+            <li>third</li>
+            <li>fourth</li>
+            <li>fifth</li>
+        </ul>
+    </div>
+    <div id="container"></div>
+
+    <script src="scripts/domModule.js"></script>
+    <script>
+        //var domModule = …
+        var div = document.createElement("div");
+        //appends div to #wrapper
+        domModule.addElement("#wrapper", div);
+        //removes li:first-child from ul
+        domModule.removeElement("ul", "li:first-child");
+        //add handler to each a element with class button
+        domModule.addEventHandler("a.button", 'click',
+                             function () { alert("Clicked") });
+
+        
+        var navItem = document.createElement('li');
+        domModule.addToBuffer("#main-nav ul", navItem.cloneNode(true));
+
+        domModule.addEventHandler("button.add50divs", 'click', add50divs);
+        function add50divs() {
+            for (var i = 0; i < 50; i++) {
+                
+                domModule.addToBuffer("#container", div.cloneNode(true));
+                domModule.addToBuffer("#main-nav ul", navItem.cloneNode(true));
+            }
+        }
+    </script>
+</body>
+</html>

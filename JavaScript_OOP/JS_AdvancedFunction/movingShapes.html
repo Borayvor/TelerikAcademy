@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>movingShapes</title>   
+    <style>
+        #wrapper{
+            width: 800px;
+            height: 600px;
+            border: 1px solid black; 
+            position: absolute;           
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="container">
+        <button id="circular-move">Circular Move</button>
+        <button id="rectangular-move">Rectangular Move</button>
+    </div>    
+    <script src="scripts/movingShapes.js"></script>
+    <script>  
+        document.getElementById("circular-move").addEventListener('click', function () { movingShapes.add("ellipse") });
+        document.getElementById('rectangular-move').addEventListener('click', function () { movingShapes.add("rect") });
+    </script>
+</body>   
+</html>
