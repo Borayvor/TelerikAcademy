@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E01LeapYear", "E01LeapYear\E01LeapYear.csproj", "{CDD25AB6-3A8C-41F3-B91C-13528C22023B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E02TenRandomValues", "E02TenRandomValues\E02TenRandomValues.csproj", "{753DC8A6-7081-4244-8754-315F1BC77B5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E03WhichDayIsToday", "E03WhichDayIsToday\E03WhichDayIsToday.csproj", "{E68311A6-090D-47FD-9B16-039902765362}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E04TheSurfaceOfATriangle", "E04TheSurfaceOfATriangle\E04TheSurfaceOfATriangle.csproj", "{C854ADE8-A71B-4127-AC05-3186F6B21218}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E05NumberOfWorkdays", "E05NumberOfWorkdays\E05NumberOfWorkdays.csproj", "{2D116F1D-C88D-46B7-9C12-08365EB752D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E06SumOfValuesFromString", "E06SumOfValuesFromString\E06SumOfValuesFromString.csproj", "{D6E90B62-39C8-4542-8275-7086B43EA08B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E07CalculationOfArithmeticExpression", "E07CalculationOfArithmeticExpression\E07CalculationOfArithmeticExpression.csproj", "{0B05626C-DFDC-4126-91AB-E7DBA586F9CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDD25AB6-3A8C-41F3-B91C-13528C22023B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDD25AB6-3A8C-41F3-B91C-13528C22023B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDD25AB6-3A8C-41F3-B91C-13528C22023B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDD25AB6-3A8C-41F3-B91C-13528C22023B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{753DC8A6-7081-4244-8754-315F1BC77B5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{753DC8A6-7081-4244-8754-315F1BC77B5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{753DC8A6-7081-4244-8754-315F1BC77B5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{753DC8A6-7081-4244-8754-315F1BC77B5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E68311A6-090D-47FD-9B16-039902765362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E68311A6-090D-47FD-9B16-039902765362}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E68311A6-090D-47FD-9B16-039902765362}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E68311A6-090D-47FD-9B16-039902765362}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C854ADE8-A71B-4127-AC05-3186F6B21218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C854ADE8-A71B-4127-AC05-3186F6B21218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C854ADE8-A71B-4127-AC05-3186F6B21218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C854ADE8-A71B-4127-AC05-3186F6B21218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D116F1D-C88D-46B7-9C12-08365EB752D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D116F1D-C88D-46B7-9C12-08365EB752D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D116F1D-C88D-46B7-9C12-08365EB752D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D116F1D-C88D-46B7-9C12-08365EB752D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6E90B62-39C8-4542-8275-7086B43EA08B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E90B62-39C8-4542-8275-7086B43EA08B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E90B62-39C8-4542-8275-7086B43EA08B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E90B62-39C8-4542-8275-7086B43EA08B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B05626C-DFDC-4126-91AB-E7DBA586F9CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B05626C-DFDC-4126-91AB-E7DBA586F9CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B05626C-DFDC-4126-91AB-E7DBA586F9CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B05626C-DFDC-4126-91AB-E7DBA586F9CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+EndGlobal
