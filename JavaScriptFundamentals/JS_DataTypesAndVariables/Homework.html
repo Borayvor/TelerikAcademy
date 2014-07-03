@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("1. Assign all the possible JavaScript literals to different variables.");
+        var intVariable = 123456789;
+        jsConsole.writeLine("int = " + intVariable);
+
+        var floatVariable = 1234.56789;
+        jsConsole.writeLine("float = " + floatVariable);
+
+        var boolVariable = true;
+        jsConsole.writeLine("boolean = " + boolVariable);
+
+        var arrayCoffees = ['"French Roast"', '"Colombian"', '"Kona"'];
+        jsConsole.writeLine("array = " + arrayCoffees);
+
+        var Sales = "Toyota";
+
+        function CarTypes(name) {
+            if (name == "Honda") {
+                return name;
+            } else {
+                return "Sorry, we don't sell " + name + ".";
+            }
+        }
+
+        var objectCar = { myCar: "Saturn", getCar: CarTypes("Honda"), special: Sales };
+        jsConsole.writeLine("object car :");
+        jsConsole.writeLine("myCar : " + objectCar.myCar);
+        jsConsole.writeLine("getCar : " + objectCar.getCar);
+        jsConsole.writeLine("special (Sales) : " + objectCar.special);
+
+        jsConsole.writeLine("");
+        jsConsole.writeLine("2. Create a string variable with quoted text in it.");
+
+        var stringVariable = '"Welcome to JavaScript", teacher said.';
+        jsConsole.writeLine("string = " + stringVariable);
+
+        jsConsole.writeLine("");
+        jsConsole.writeLine("3. Try typeof on all variables you created.");
+
+        jsConsole.writeLine("typeOf(intVariable) = " + typeof(intVariable));
+        jsConsole.writeLine("typeOf(floatVariable) = " + typeof(floatVariable));
+        jsConsole.writeLine("typeOf(boolVariable) = " + typeof(boolVariable));
+        jsConsole.writeLine("typeOf(arrayCoffees) = " + typeof(arrayCoffees));
+        jsConsole.writeLine("typeOf(objectCar) = " + typeof(objectCar));
+        jsConsole.writeLine("typeOf(stringVariable) = " + typeof(stringVariable));        
+        
+        jsConsole.writeLine("");
+        jsConsole.writeLine("4. Create null, undefined variables and try typeof on them.");
+
+        var nullVariable = null;
+        var undefinedVariable = undefined;
+
+        jsConsole.writeLine("typeOf(nullVariable) = " + typeof (nullVariable));
+        jsConsole.writeLine("typeOf(undefinedVariable) = " + typeof (undefinedVariable));
+    </script>
+</body>
+</html>

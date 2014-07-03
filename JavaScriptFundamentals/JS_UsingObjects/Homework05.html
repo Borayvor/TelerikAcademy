@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework05</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]
+        {
+            border: 1px solid black;
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 10px;
+        }
+
+        a
+        {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+            a:hover
+            {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <a href="#" onclick="onButtonClickPrintResult()">Print result</a>
+    <div id="console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("5. Write a function that finds the youngest person in a" +
+            " given array of persons and prints his/hers full name.");
+        jsConsole.writeLine("-- Each person have properties firstname, lastname and age.");
+        jsConsole.writeLine('');
+
+        function findYoungest(persons) {
+
+            var age = persons[0]['age'];
+            var fullName = '';
+
+            for (var index = 1; index < persons.length; index++) {
+
+                if (age > persons[index]['age']) {
+                    age = persons[index]['age'];
+                    fullName = persons[index]['firstname'] + ' ' + persons[index]['lastname'];
+                }
+            }
+            return (fullName + ' : ' + age + 'age');
+        }
+
+        var persons = [
+          { firstname: "Gosho", lastname: "Petrov", age: 32 },
+          { firstname: "Bay", lastname: "Ivan", age: 81 },
+          { firstname: "Bugs", lastname: "Bunny", age: 72 },
+          { firstname: "Speedy", lastname: "Gonzales", age: 7 },
+          { firstname: "Zoro", lastname: "Chernev", age: 87 },
+          { firstname: "Pesho", lastname: "Peshev", age: 23 },
+        ];
+        
+        function onButtonClickPrintResult() {
+
+            jsConsole.writeLine(findYoungest(persons));
+        }
+    </script>
+</body>
+</html>

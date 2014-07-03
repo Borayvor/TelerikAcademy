@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework03</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]
+        {
+            border: 1px solid black;
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 10px;
+            width: 200px;
+        }
+
+        a
+        {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+            a:hover
+            {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <label for="sequence-value">Sequence : </label>
+    <input id="sequence-value" type="text" value="89 56 12 23 45 78 67 34" />
+    <br />
+    <a onclick="onButtonClickGetSequence()" href="#">Print numbers</a>
+    <div id="js-console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("3. Write a script that finds the max and min number from a sequence of numbers.");
+        jsConsole.writeLine("The numbers must be separated by space !");
+        
+        function onButtonClickGetSequence() {
+            var sequence = jsConsole.read("#sequence-value");            
+            var number = sequence.split(" ");
+            var minNumber = number[0];
+            var maxNumber = number[0];
+
+            if (number.length > 0) {
+                for (var index = 1; index < number.length; index++) {
+
+                    if (minNumber > number[index]) {
+                        minNumber = number[index];
+                    }
+
+                    if (maxNumber < number[index]) {
+                        maxNumber = number[index];
+                    }
+                }
+            }
+            else {
+                jsConsole.writeLine("The sequence length must be larger than 0 !");
+            }
+
+            jsConsole.writeLine("Minmal number is : " + minNumber);
+            jsConsole.writeLine("Maximal number is : " + maxNumber);
+        }
+    </script>
+</body>
+</html>

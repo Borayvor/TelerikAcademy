@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework06</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]{
+			border: 1px solid black;
+			padding: 5px 10px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;		   
+			margin-bottom: 10px;
+		}
+
+		a{
+			color: black;
+			border: 1px solid black;
+			padding: 5px 10px;						
+			text-decoration: none;	   
+			display: inline-block;		 
+			margin: 10px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+    </style>
+</head>
+<body>
+    <label for="a-number" > a : </label>
+    <input id="a-number" type="text" />
+    <br />
+    <label for="b-number" > b : </label>
+    <input id="b-number" type="text" />
+    <br />
+    <label for="c-number" > c : </label>
+    <input id="c-number" type="text" />
+    <br />
+    <a href="#" onclick="onButtonClickQuadraticEquation()">Calculate</a>
+    <div  id="console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("6. Write a script that enters the coefficients a, b and c of a quadratic equation" + 
+            " a*x2 + b*x + c = 0 and calculates and prints its real roots. Note that quadratic equations may have" +
+            " 0, 1 or 2 real roots.");
+
+        function onButtonClickQuadraticEquation() {
+            var a = jsConsole.readFloat("#a-number");
+            var b = jsConsole.readFloat("#b-number");
+            var c = jsConsole.readFloat("#c-number");
+
+            jsConsole.writeLine (a + "(x * x) + " + b + "x + " + c + " = 0");
+
+            var D = (b * b) - (4 * a * c);
+
+            if (D >= 0)
+            {
+                var x1 = (-b + Math.sqrt (D)) / (2 * a);
+
+                var x2 = (-b - Math.sqrt (D)) / (2 * a);
+
+                jsConsole.writeLine("The real roots are :");
+                jsConsole.writeLine("x1 = " + x1);
+                jsConsole.writeLine("x2 = " + x2);
+            }
+            else
+            {
+                jsConsole.writeLine("There are  no real roots.");
+            }
+        }
+    </script>
+</body>
+</html>

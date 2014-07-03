@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework01</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]
+        {
+            border: 1px solid black;
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 10px;
+        }
+
+        a
+        {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+            a:hover
+            {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <label for="string-value">String : </label>
+    <input id="string-value" type="text" />
+    <br />
+    <a href="#" onclick="onButtonClickPrintResult()">Print result</a>
+    <div id="console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("1. Write a JavaScript function reverses string and returns it.");
+        jsConsole.writeLine('');
+
+        function onButtonClickPrintResult() {
+
+            var originalString = jsConsole.read('#string-value');
+            
+            var reversedString = '';
+                                                
+            for (var index = originalString.length - 1; index >= 0 ; index--) {
+                
+                reversedString += originalString[index];
+            }  
+
+            jsConsole.writeLine("Original string : " + originalString);
+            jsConsole.writeLine("Reversed string : " + reversedString);
+        }
+    </script>
+</body>
+</html>

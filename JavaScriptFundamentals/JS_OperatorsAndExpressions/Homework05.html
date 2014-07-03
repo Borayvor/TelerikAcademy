@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework05</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]{
+            padding: 5px 15px;
+            font-family: Consolas;
+            background-color: black;
+            color: white;
+            margin-bottom: 10px;
+            border: 1px solid black;
+        }
+
+        a {
+            border: 1px solid black;
+            padding: 5px 15px;
+            text-decoration: none;
+            font-family: 'Comic Sans MS', cursive;
+            display: inline-block;
+            margin: 15px 0;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <label for="input-data">Number : </label>
+    <input id="input-data" type="text"/>
+    <br />
+    <a href="#" onclick="onButtonClick()">Check</a>    
+    <div id="js-console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("5. Write a boolean expression for finding if the bit 3 (counting from 0) of a given integer is 1 or 0.");
+    </script>
+    <script>
+        function onButtonClick() {
+            var number = jsConsole.readInteger("#input-data");
+
+            var mask = 1 << 3;
+            var numberAndMask = number & mask;
+            var bit = numberAndMask >> 3;
+
+            if (bit) {
+                jsConsole.writeLine("Third bit is " + bit);
+            }
+            else {
+                jsConsole.writeLine("Third bit is " + bit);
+            }
+            
+        }
+    </script>
+</body>
+</html>

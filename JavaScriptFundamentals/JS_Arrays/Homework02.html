@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework02</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]
+        {
+            border: 1px solid black;
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 10px;
+        }
+
+        a
+        {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+            a:hover
+            {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <a href="#" onclick="onButtonClickPrintAnswer()">Print</a>
+    <div id="js-console" class="js-console js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("2. Write a script that compares two char arrays lexicographically (letter by letter).");
+        jsConsole.writeLine("");
+
+        function compareTwoArrays(firstArray, secondArray) {
+
+            var areArraysEqual = true;
+
+            if (firstArray.length == secondArray.length) {
+                for (var index = 0; index < firstArray.length; index++) {
+                    if (firstArray[index] !== secondArray[index]) {
+                        areArraysEqual = false;
+                        break;
+                    }
+                }
+            }
+            else {
+                areArraysEqual = false;
+            }
+
+            jsConsole.writeLine("Is array [" + firstArray + "] equal to array [" + secondArray + "] ? ---> " + areArraysEqual)
+        }
+
+        function onButtonClickPrintAnswer() {
+
+            compareTwoArrays(["Y", "B", "S", "S"], ["Y", "B", "S", "S"]);
+            compareTwoArrays(["Y", "B", "S", "S"], ["Y", "B"]);
+            compareTwoArrays(["Y", "B", "S", "S"], ["y", "b", "s", "s"]);
+            compareTwoArrays(["Y", "B", "S", "S"], [5, 7, 89, -34]);
+        }
+    </script>
+</body>
+</html>

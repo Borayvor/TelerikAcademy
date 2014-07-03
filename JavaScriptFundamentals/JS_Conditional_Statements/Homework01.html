@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework01</title>    
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]{
+			border: 1px solid black;
+			padding: 5px 10px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;		   
+			margin-bottom: 10px;
+		}
+
+		a{
+			color: black;
+			border: 1px solid black;
+			padding: 5px 10px;						
+			text-decoration: none;	   
+			display: inline-block;		 
+			margin: 10px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+    </style>
+</head>
+<body>    
+    <label for="first-number" >First number : </label>
+    <input id="first-number" type="text" />
+    <br />
+    <label for="second-number" >Second number : </label>
+    <input id="second-number" type="text" />
+    <br />
+    <a href="#" onclick="onButtonClickExchangeValue()">Examine</a>
+    <div  id="console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("1. Write an \"if\" statement that examines two integer variables and" +
+            " exchanges their values if the first one is greater than the second one.");
+        function onButtonClickExchangeValue() {
+            var firstNumber = jsConsole.readFloat("#first-number");
+            var secondNumber = jsConsole.readFloat("#second-number");
+            
+            if (firstNumber > secondNumber) {
+                var exchangeValue = secondNumber;
+                secondNumber = firstNumber;
+                firstNumber = exchangeValue;
+            }
+
+            jsConsole.writeLine("First number : " + firstNumber);
+            jsConsole.writeLine("Second number : " + secondNumber);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework09</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]
+        {
+            border: 1px solid black;
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 10px;
+        }
+
+        a
+        {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+            a:hover
+            {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>    
+    <a href="#" onclick="onButtonClickPrintResult()">Print result</a>
+    <div id="console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        console.log("9. Write a function for extracting all email addresses from" +
+            " given text. All substrings that match the format <identifier>@<host>…<domain>" +
+            " should be recognized as emails. Return the emails as array of strings.");
+        jsConsole.writeLine('Look at console.');
+        console.log();
+
+        var str = "Static void Main() nakov@telerik.com. using System,nakov@gmail.com return";
+
+        function onButtonClickPrintResult() {
+
+            var regExEmail = new RegExp('\\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}\\b', "g");
+
+            var matchEmail = str.match(regExEmail);
+
+            console.log(matchEmail);
+        }
+    </script>
+</body>
+</html>

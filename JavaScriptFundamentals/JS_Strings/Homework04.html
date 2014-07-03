@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework04</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]
+        {
+            border: 1px solid black;
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 10px;
+        }
+
+        a
+        {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+            a:hover
+            {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>    
+    <a href="#" onclick="onButtonClickPrintResult()">Print result</a>
+    <div id="console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("4. You are given a text. Write a function that changes the text in all regions:");
+        jsConsole.writeLine("-- <upcase>text</upcase> to uppercase.");
+        jsConsole.writeLine("-- <lowcase>text</lowcase> to lowercase.");
+        jsConsole.writeLine("-- <mixcase>text</mixcase> to mix casing(random).");
+        jsConsole.writeLine('');
+
+        var text = "We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>." +
+            " We <mixcase>don't</mixcase> have <lowcase>anything</lowcase> else.";
+        jsConsole.writeLine('Look at console.');
+        console.log(text);
+        jsConsole.writeLine(text);
+                        
+        function doUpcase(text) {
+            var pattern = "<upcase>";
+            var indexStart = text.indexOf(pattern);            
+            while (indexStart > -1) {
+                var substringText = text.substring(indexStart + pattern.length, text.indexOf("</upcase>", indexStart))
+                var upperText = substringText.toUpperCase();
+                text = text.replace(substringText, upperText);
+                indexStart = text.indexOf("<upcase>", indexStart + 1);
+            }
+            return text;
+        }
+
+        function doMixCase(text) {
+            var pattern = "<mixcase>";
+            var indexStart = text.indexOf(pattern);
+            while (indexStart > -1) {
+                var insedeText = text.substring(indexStart + pattern.length, text.indexOf("</mixcase>", indexStart));
+                var mixedText = new String(insedeText);
+                for (var i = 0; i < mixedText.length ; i++) {
+                    if (i % 2 == 0) {
+                        mixedText = mixedText.replace(mixedText[i], mixedText[i].toUpperCase())
+                    }
+                    else {
+                        mixedText = mixedText.replace(mixedText[i], mixedText[i].toLowerCase())
+                    }
+                }
+                text = text.replace(insedeText, mixedText);
+                indexStart = text.indexOf("<mixcase>", indexStart + 1);
+            }
+            return text;
+        }
+
+        function doLowCase(text) {
+            var pattern = "<lowcase>";
+            var indexStart = text.indexOf(pattern);
+            while (indexStart > -1) {
+                var insedeText = text.substring(indexStart + pattern.length, text.indexOf("</lowcase>", indexStart));
+                var lowerText = insedeText.toLowerCase();
+                text = text.replace(insedeText, lowerText);
+                indexStart = text.indexOf("<lowcase>", indexStart + 1);
+            }
+            return text;
+        }
+
+        function onButtonClickPrintResult() {
+
+            var newText = text;
+
+            newText = doUpcase(newText);
+            newText = doMixCase(newText);
+            newText = doLowCase(newText);
+
+            console.log(newText);
+            jsConsole.writeLine(newText);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework01</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]
+        {
+            border: 1px solid black;
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 10px;
+        }
+
+        a
+        {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+            a:hover
+            {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <a href="#" onclick="onButtonClickPrintResult()">Print result</a>
+    <div id="console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("1. Write functions for working with shapes in  standard Planar coordinate system.");
+        jsConsole.writeLine("-- Points are represented by coordinates P(X, Y).");
+        jsConsole.writeLine("-- Lines are represented by two points, marking their beginning and ending - L(P1(X1,Y1), P2(X2,Y2)).");
+        jsConsole.writeLine("-- Calculate the distance between two points.");
+        jsConsole.writeLine("-- Check if three segment lines can form a triangle.");
+        jsConsole.writeLine("");
+
+        function Point(xCoord, yCoord) {
+            this.x = xCoord;
+            this.y = yCoord;
+            this.toString = function () { return "P(" + this.x + ", " + this.y + ")"; };            
+        }
+
+        function Line(startPoint, endPoint) {
+            
+            if ((startPoint instanceof Point) && (endPoint instanceof Point)) {
+                return {
+                    start: startPoint,
+                    end: endPoint,
+                    length : function () { return CalculateTwoPointDistance(startPoint, endPoint); },
+                    toString: function () { return "L(" + this.start + ", " + this.end + ")"; }
+                }
+            }
+            else {
+                return {
+                    toString: function () { return "The variables must be of type Point !"; }
+                }                
+            }
+        }
+
+        function CalculateTwoPointDistance(firstpoint, secondPoint) {
+            
+                var distance = Math.sqrt(Math.pow((firstpoint.x - secondPoint.x), 2) + Math.pow((firstpoint.y - secondPoint.y), 2));
+
+                return distance;
+        }
+
+        function CheckFormTriangle(firstLine, secondLine, thirdLine) {
+
+            var lineA = firstLine.length();
+            var lineB = secondLine.length();
+            var lineC = thirdLine.length();
+                        
+            return lineA + lineB > lineC && lineA + lineC > lineB && lineB + lineC > lineA;
+        }
+
+        function onButtonClickPrintResult() {
+
+            var pointOne = new Point(10, 10);
+            var pointTwo = new Point(10, 15);
+            var pointThree = new Point(15, 10);
+            var pointFour = new Point(-10, -15);
+
+            var lineOne = new Line(pointOne, pointTwo);
+            var lineTwo = new Line(pointTwo, pointThree);
+            var lineThree = new Line(pointOne, pointThree);
+            var lineFour = new Line(pointThree, pointFour);
+
+            jsConsole.writeLine("First point : " + pointOne);
+            jsConsole.writeLine("Second point : " + pointTwo);
+            jsConsole.writeLine("Third point : " + pointTwo);
+            jsConsole.writeLine("Fouth point : " + pointTwo);
+            jsConsole.writeLine("");
+
+            jsConsole.writeLine("First line : " + lineOne);
+            jsConsole.writeLine("Second line : " + lineTwo);
+            jsConsole.writeLine("Third line : " + lineThree);
+            jsConsole.writeLine("Fouth line : " + lineFour);
+            jsConsole.writeLine("");
+
+            jsConsole.writeLine("The distance between " + pointThree + " and " + pointFour +
+                    " is : " + CalculateTwoPointDistance(pointThree, pointFour));
+            jsConsole.writeLine("");
+
+            jsConsole.writeLine("Check for triangle (lineOne, lineTwo, lineThree) : " + CheckFormTriangle(lineOne, lineTwo, lineThree));
+
+            jsConsole.writeLine("Check for triangle (lineOne, lineTwo, lineFour) : " + CheckFormTriangle(lineOne, lineTwo, lineFour));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework07</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]
+        {
+            border: 1px solid black;
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 10px;
+        }
+
+        a
+        {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+            a:hover
+            {
+                text-decoration: underline;
+            }
+
+        div.variable
+        {
+            float: left;
+            position: relative;
+            margin-right: 10px;
+        }
+
+        body div#input-div:after
+        {
+            display: block;
+            content: "";
+            height: 0;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div id="input-div">
+        <div class="variable">
+            <label for="first-variable">First variable : </label>
+            <input id="first-variable" type="text" />
+            <br />
+            <label for="second-variable">Second variable : </label>
+            <input id="second-variable" type="text" />
+            <br />
+            <label for="third-variable">Third variable : </label>
+            <input id="third-variable" type="text" />
+        </div>
+        <div class="variable">
+            <label for="fourth-variable">Fourth variable : </label>
+            <input id="fourth-variable" type="text" />
+            <br />
+            <label for="fifth-variable">Fifth variable : </label>
+            <input id="fifth-variable" type="text" />
+        </div>
+    </div>
+    <a href="#" onclick="onButtonClickFindGreatest()">Find the greatest</a>
+    <div id="console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("7. Write a script that finds the greatest of given 5 variables.");
+
+        function isgreatest(first, second) 
+        {
+            var greatest = 0;
+
+            if (first > second) {
+                greatest = first;
+            }
+            else {
+                greatest = second;
+            }
+            return greatest;
+        }
+
+        function onButtonClickFindGreatest() {
+            var firstVariable = jsConsole.readFloat("#first-variable");
+            var secondVariable = jsConsole.readFloat("#second-variable");
+            var thirdVariable = jsConsole.readFloat("#third-variable");
+            var fourthVariable = jsConsole.readFloat("#fourth-variable");
+            var fifthVariable = jsConsole.readFloat("#fifth-variable");
+
+            var greatest = 0;
+            greatest = isgreatest(greatest, firstVariable);
+            greatest = isgreatest(greatest, secondVariable);
+            greatest = isgreatest(greatest, thirdVariable);
+            greatest = isgreatest(greatest, fourthVariable);
+            greatest = isgreatest(greatest, fifthVariable);
+
+            jsConsole.writeLine("The greatest of given 5 variables is : " + greatest);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework07</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]
+        {
+            border: 1px solid black;
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 10px;
+        }
+
+        a
+        {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+            a:hover
+            {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <label for="element-value">Element : </label>
+    <input id="element-value" type="text" />
+    <br />
+    <a href="#" onclick="onButtonClickPrintAnswer()">Print</a>
+    <div id="js-console" class="js-console js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("7. Write a program that finds the index of given element in a" +
+            " sorted array of integers by using the binary search algorithm (find it in Wikipedia).");
+        jsConsole.writeLine("");
+
+        var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+        jsConsole.writeLine("Array : [" + array + "]");
+        jsConsole.writeLine("");
+
+        function binarySearch(array, value, left, right) {
+
+            if (left > right) // Когато са обходени елементите на масива и търсения елемент не е намерен.
+            {                 //  В този случай може да заключим, че търсеният елемент го няма в масива.
+                return -1;
+            }
+
+            var middle = (left + right) / 2;
+
+            if (array[middle] === value) // Взима средния елемент на масива.
+            {                            // Ако средният елемент е търсената стойност, алгоритъма завършва.
+                return middle;
+            }
+            else if (array[middle] > value) // Търсената стойност е по-малка от средният елемент. 
+            {                               // В този случай стъпка 1 се повтаря с частта от масива преди средният елемент.
+                return binarySearch(array, value, left, middle - 1);
+            }
+            else // Търсената стойност е по-голяма от средният елемент. 
+            {    // В този случай стъпка 1 се повтаря с частта от масива след средният елемент.
+                return binarySearch(array, value, middle + 1, right);
+            }
+        }
+
+        function onButtonClickPrintAnswer() {
+            
+            var element = jsConsole.readInteger("#element-value");
+
+            var position = binarySearch(array, element, 0, array.length - 1);
+
+            if (position == -1) {
+                jsConsole.writeLine("Searched value is absent.");
+            }
+            else {
+                jsConsole.writeLine("Searched value is on position: " + position);
+            }            
+        }
+    </script>
+</body>
+</html>

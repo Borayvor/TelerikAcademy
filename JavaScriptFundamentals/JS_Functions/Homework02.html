@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework02</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]
+        {
+            border: 1px solid black;
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 10px;
+        }
+
+        a
+        {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+            a:hover
+            {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <label for="number-value">Number : </label>
+    <input id="number-value" type="text" />
+    <br />
+    <a href="#" onclick="onButtonClickPrintResult()">Print result</a>
+    <div id="console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("2. Write a function that reverses the digits of given decimal number.");
+
+        function Reverse(value) {
+
+            var result = 0;
+
+            while (value !== 0) {
+                result = (result * 10) + (parseInt(value % 10)); // измества получената цифра в ляво и прибавя следващата
+                                 
+                value = parseInt(value / 10);                
+            }
+
+            return result;
+        }
+
+        function onButtonClickPrintResult() {
+
+            var decimalNumber = jsConsole.readInteger ("#number-value");
+
+            var reverseNumber = Reverse (decimalNumber);
+
+            jsConsole.writeLine("The reversed number is : " + reverseNumber);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework03</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]{
+            padding: 5px 15px;
+            font-family: Consolas;
+            background-color: black;
+            color: white;
+            margin-bottom: 10px;
+            border: 1px solid black;
+        }
+
+        a {
+            border: 1px solid black;
+            padding: 5px 15px;
+            text-decoration: none;
+            font-family: 'Comic Sans MS', cursive;
+            display: inline-block;
+            margin: 15px 0;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <label for="input-width">Width : </label>
+    <input id="input-width" type="text"/>
+    <br />
+    <label for="input-height">Height : </label>
+    <input id="input-height" type="text"/>
+    <br />
+    <a href="#" onclick="onButtonClick()">Check</a>    
+    <div id="js-console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("3. Write an expression that calculates rectangle’s area by given width and height.");
+    </script>
+    <script>
+        function onButtonClick() {
+            var width = jsConsole.readFloat("#input-width");
+            var height = jsConsole.readFloat("#input-height");
+
+            if ((width > 0) && (height > 0)) {
+                jsConsole.writeLine("The rectangle’s area is: " + (width * height));
+            }
+            else {
+                jsConsole.writeLine("The height and width can't be less or equal than 0 !");
+            }
+        }
+    </script>
+</body>
+</html>

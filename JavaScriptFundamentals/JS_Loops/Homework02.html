@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework02</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]
+        {
+            border: 1px solid black;
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 10px;
+        }
+
+        a
+        {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+            a:hover
+            {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <label for="N-value">N : </label>
+    <input id="N-value" type="text" />
+    <br />
+    <a onclick="onButtonClickGetN()" href="#">Print numbers</a>
+    <div id="js-console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("2. Write a script that prints all the numbers from 1 to N," +
+            " that are not divisible by 3 and 7 at the same time (divisible : 21, 42, 63, 84, 105, 126...).");
+
+        function onButtonClickGetN() {
+            var nValue = jsConsole.readInteger("#N-value");
+
+            if (nValue > 0) {
+                for (var index = 1; index <= nValue; index++) {
+                    if (index % 21 !== 0) {
+                        jsConsole.writeLine(index);
+                    }
+                }
+            }
+            else {
+                jsConsole.writeLine("\"N\" must be larger than 0!");
+            }
+        }
+    </script>
+</body>
+</html>

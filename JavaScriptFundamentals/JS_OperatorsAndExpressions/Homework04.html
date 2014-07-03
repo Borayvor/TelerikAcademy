@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework04</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]{
+            padding: 5px 15px;
+            font-family: Consolas;
+            background-color: black;
+            color: white;
+            margin-bottom: 10px;
+            border: 1px solid black;
+        }
+
+        a {
+            border: 1px solid black;
+            padding: 5px 15px;
+            text-decoration: none;
+            font-family: 'Comic Sans MS', cursive;
+            display: inline-block;
+            margin: 15px 0;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <label for="input-data">Number : </label>
+    <input id="input-data" type="text"/>
+    <br />
+    <a href="#" onclick="onButtonClick()">Check</a>    
+    <div id="js-console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("4. Write an expression that checks for given integer if its third digit" +
+            " (right-to-left) is 7. E. g. 1732  true.");
+    </script>
+    <script>
+        function onButtonClick() {
+            var number = jsConsole.readInteger("#input-data");
+            if (number < 0) {
+                number *= -1;
+            }
+            var thirdDigit = ((number % 1000) / 100) - 7;
+
+            if (thirdDigit >= 0 && thirdDigit < 1) {
+                jsConsole.writeLine("The third digit (right-to-left) is 7.");
+            }
+            else {
+                jsConsole.writeLine("The third digit (right-to-left) is not 7.");
+            }
+            
+        }
+    </script>
+</body>
+</html>

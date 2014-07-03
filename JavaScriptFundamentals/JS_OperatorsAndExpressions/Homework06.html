@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework06</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]{
+            padding: 5px 15px;
+            font-family: Consolas;
+            background-color: black;
+            color: white;
+            margin-bottom: 10px;
+            border: 1px solid black;
+        }
+
+        a {
+            border: 1px solid black;
+            padding: 5px 15px;
+            text-decoration: none;
+            font-family: 'Comic Sans MS', cursive;
+            display: inline-block;
+            margin: 15px 0;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <label for="input-x">X : </label>
+    <input id="input-x" type="text"/>
+    <br />
+    <label for="input-y">Y : </label>
+    <input id="input-y" type="text"/>
+    <br />
+    <a href="#" onclick="onButtonClick()">Check</a>    
+    <div id="js-console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("6. Write an expression that checks if given print (x,  y) is within a circle K(O, 5).");
+    </script>
+    <script>
+        function onButtonClick() {
+            var x = jsConsole.readFloat("#input-x");
+            var y = jsConsole.readFloat("#input-y");
+
+            if (((x * x) + (y * y)) <= 25) {
+                jsConsole.writeLine("The point is within the circle K(0, 5).");
+            }
+            else {
+                jsConsole.writeLine("The point is out of the circle K(0, 5).");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework08</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]{
+            padding: 5px 15px;
+            font-family: Consolas;
+            background-color: black;
+            color: white;
+            margin-bottom: 10px;
+            border: 1px solid black;
+        }
+
+        a {
+            border: 1px solid black;
+            padding: 5px 15px;
+            text-decoration: none;
+            font-family: 'Comic Sans MS', cursive;
+            display: inline-block;
+            margin: 15px 0;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <label for="input-a">Side A : </label>
+    <input id="input-a" type="text"/>
+    <br />
+    <label for="input-b">Side B : </label>
+    <input id="input-b" type="text"/>
+    <br />
+    <label for="input-h">Height : </label>
+    <input id="input-h" type="text"/>
+    <br />
+    <a href="#" onclick="onButtonClick()">Check</a>    
+    <div id="js-console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("8. Write an expression that calculates trapezoid's area by given sides a and b and height h.");
+    </script>
+    <script>
+        function onButtonClick() {
+            var sideA = jsConsole.readFloat("#input-a");
+            var sideB = jsConsole.readFloat("#input-b");
+            var height = jsConsole.readFloat("#input-h");
+
+            var result = (((sideA + sideB) * height) / 2);
+
+            if ((sideA > 0) && (sideB > 0) && (height > 0)) {                
+                jsConsole.writeLine("The trapezoid's area is: " + result)
+            }
+            else {
+                jsConsole.writeLine("The side A, side B and height can't be less or equal than 0 !");
+            }
+        }
+    </script>
+</body>
+</html>

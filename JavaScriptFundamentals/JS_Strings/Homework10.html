@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework10</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]
+        {
+            border: 1px solid black;
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 10px;
+        }
+
+        a
+        {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+            a:hover
+            {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <a href="#" onclick="onButtonClickPrintResult()">Print result</a>
+    <div id="console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("10. Write a program that extracts from a given text all palindromes, e.g. \"ABBA\", \"lamal\", \"exe\".");
+        jsConsole.writeLine('');
+
+        var text = "Static void Main() ABBA, using System lamal, exe.";
+        jsConsole.writeLine(text);
+        jsConsole.writeLine('');
+
+        function IsPalindrome(text) {
+            for (var index = 0; index < text.length / 2; index++) {
+                if (text[index] != text[text.length - 1 - index]) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        function onButtonClickPrintResult() {
+
+            var regEx = new RegExp('\\w+', "g");
+
+            var textMatch = text.match(regEx);
+
+            for (var item in textMatch)
+            {                
+                if (IsPalindrome(textMatch[item]))
+                {
+                    jsConsole.writeLine('Palindrome : ' + textMatch[item]);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

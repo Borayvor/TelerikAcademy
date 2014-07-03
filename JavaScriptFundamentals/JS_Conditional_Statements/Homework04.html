@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework04</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]{
+			border: 1px solid black;
+			padding: 5px 10px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;		   
+			margin-bottom: 10px;
+		}
+
+		a{
+			color: black;
+			border: 1px solid black;
+			padding: 5px 10px;						
+			text-decoration: none;	   
+			display: inline-block;		 
+			margin: 10px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+    </style>
+</head>
+<body>
+    <label for="first-number" >First number : </label>
+    <input id="first-number" type="text" />
+    <br />
+    <label for="second-number" >Second number : </label>
+    <input id="second-number" type="text" />
+    <br />
+    <label for="third-number" >Third number : </label>
+    <input id="third-number" type="text" />
+    <br />
+    <a href="#" onclick="onButtonClickSortDescending()">Sort in descending order</a>
+    <div  id="console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("4. Sort 3 real values in descending order using nested if statements.");
+
+        function onButtonClickSortDescending() {
+            var firstNumber = jsConsole.readFloat("#first-number");
+            var secondNumber = jsConsole.readFloat("#second-number");
+            var thirdNumber = jsConsole.readFloat("#third-number");
+
+            
+
+            if (firstNumber < secondNumber) {
+                var variable = firstNumber;
+                firstNumber = secondNumber;
+                secondNumber = variable;
+
+                if (secondNumber < thirdNumber) {
+                    variable = secondNumber;
+                    secondNumber = thirdNumber;
+                    thirdNumber = variable;
+
+                    if (firstNumber < secondNumber) {
+                        variable = firstNumber;
+                        firstNumber = secondNumber;
+                        secondNumber = variable;
+                    }
+                }
+            }
+            else
+            {
+                if (secondNumber < thirdNumber)
+                {
+                    var variable = secondNumber;
+                    secondNumber = thirdNumber;
+                    thirdNumber = variable;
+
+                    if (firstNumber < secondNumber)
+                    {
+                        variable = firstNumber;
+                        firstNumber = secondNumber;
+                        secondNumber = variable;
+                    }
+                }
+            }
+            jsConsole.writeLine("First variable : " + firstNumber);
+            jsConsole.writeLine("Second variable : " + secondNumber);
+            jsConsole.writeLine("Thrid variable : " + thirdNumber);            
+        }
+    </script>
+</body>
+</html>

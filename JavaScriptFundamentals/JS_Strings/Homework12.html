@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework12</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]
+        {
+            border: 1px solid black;
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 10px;
+        }
+
+        a
+        {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+            a:hover
+            {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <div data-type="template" id="list-item" style="display: none">
+        <strong>-{name}-</strong> <span>-{age}-</span>
+    </div>
+    <a href="#" onclick="onButtonClickPrintResult()">Print result</a>
+    <div id="console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("12. Write a function that creates a HTML UL using a template for every HTML" +
+            " LI. The source of the list should an array of elements. Replace all placeholders marked with" +
+            " –{…}–   with the value of the corresponding property of the object.");
+        jsConsole.writeLine('');
+
+        function generateUnorderedList(people, template) {
+
+            var props = [];
+            var peopleList = [];
+            peopleList.push("<ul>");
+
+            for (var property in people[0]) {
+                props.push(property);
+            }
+
+            for (var index = 0; index < people.length; index++) {
+                peopleList.push("<li>");
+                var liContent = template;
+
+                for (var property in people[0]) {
+                    liContent = liContent.replace(new RegExp('-{' + property + '}-', "g"), people[index][property]);
+                }
+
+                peopleList.push(liContent);
+                peopleList.push("</li>");
+            }
+
+            peopleList.push("</ul>");
+
+            return peopleList.join('');
+        }
+
+        function onButtonClickPrintResult() {
+
+            var people = [
+                { name: "Peter", age: 14 },
+                { name: "Ivan", age: 25 },
+                { name: "Maria", age: 26 }
+            ];
+
+            var template = document.getElementById("list-item").innerHTML;
+
+            var peopleList = generateUnorderedList(people, template);
+
+            jsConsole.writeLine(peopleList);
+        }
+    </script>
+</body>
+</html>

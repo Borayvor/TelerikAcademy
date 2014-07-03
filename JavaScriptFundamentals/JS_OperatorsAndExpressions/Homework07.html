@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework07</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]
+        {
+            padding: 5px 15px;
+            font-family: Consolas;
+            background-color: black;
+            color: white;
+            margin-bottom: 10px;
+            border: 1px solid black;
+        }
+
+        a
+        {
+            border: 1px solid black;
+            padding: 5px 15px;
+            text-decoration: none;
+            font-family: 'Comic Sans MS', cursive;
+            display: inline-block;
+            margin: 15px 0;
+        }
+
+            a:hover
+            {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <label for="input-data">Number : </label>
+    <input id="input-data" type="text" />
+    <br />
+    <a href="#" onclick="onButtonClick()">Check</a>
+    <div id="js-console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("7. Write an expression that checks if given positive integer number n (n ≤ 100) is prime. E.g. 37 is prime.");
+    </script>
+    <script>
+        function isPrime(num) {
+            if (num % 2 == 0) return false;
+
+            for (var i = 3; i * i <= num; i += 2) {
+                if (num % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function onButtonClick() {
+            var number = jsConsole.readInteger("#input-data");
+
+            if (isPrime(number)) {
+                jsConsole.writeLine(number + " is prime number.");
+            }
+            else {
+                jsConsole.writeLine(number + " is composite number.");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework06</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]
+        {
+            border: 1px solid black;
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 10px;
+        }
+
+        a
+        {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+            a:hover
+            {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <a href="#" onclick="onButtonClickPrintAnswer()">Print</a>
+    <div id="js-console" class="js-console js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("6. Write a program that finds the most frequent number in an array.");
+        jsConsole.writeLine("");
+
+        var array = [7, 1, 1, 5, 2, 3, 4, 4, 1, 2, 4, 9, 3, 8];
+        jsConsole.writeLine("Array : " + array);
+
+        function onButtonClickPrintAnswer() {
+            
+            var mostFrequent = new Array();
+            var count = 0;
+            var mostFreqIndex = 0;
+
+            for (var index = 0; index < array.length - 1; index++) {
+                var tempCount = 0;
+
+                for (var position = index; position < array.length; position++) {
+                    if (array[index] === array[position]) {
+                        tempCount++;
+                    }
+                }
+
+                if (count <= tempCount) {
+                    mostFrequent[mostFreqIndex] = array[index];
+                    mostFreqIndex++;
+                    count = tempCount;
+                }
+                else {
+                    mostFreqIndex = 0;
+                }
+            }
+
+            for (var index = 0; index < mostFrequent.length; index++) {
+                jsConsole.writeLine(mostFrequent[index] + " - " + count + " times");
+            }
+        }
+    </script>
+</body>
+</html>

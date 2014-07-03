@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework04</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>        
+        a
+        {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+            a:hover
+            {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>    
+    <a onclick="onButtonClickFindProperty()" href="#">Find Smallest And Largest Property</a>
+    <div id="js-console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("4. Write a script that finds the lexicographically smallest and" +
+            " largest property in document, window and navigator objects.");
+        jsConsole.writeLine("");
+
+        function onButtonClickFindProperty() {
+            findSmallestAndLargestProperty(document);
+
+            findSmallestAndLargestProperty(window);
+
+            findSmallestAndLargestProperty(navigator);
+        }
+
+        function findSmallestAndLargestProperty(object) {
+            var minProperty = "zzzz";
+            var maxProperty = "aaaa";
+
+            for (var property in object) {
+
+                if (minProperty > property.toLowerCase()) {
+                    minProperty = property;
+                }
+
+                if (maxProperty < property.toLowerCase()) {
+                    maxProperty = property;
+                }                
+            }
+
+            jsConsole.writeLine("The smallest lexicographically property in " + object + " is : " + minProperty);
+            jsConsole.writeLine("The biggest lexicographically property in " + object + " is : " + maxProperty);
+            jsConsole.writeLine("");
+        }
+    </script>
+</body>
+</html>

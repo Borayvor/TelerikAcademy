@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework06</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]
+        {
+            border: 1px solid black;
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 10px;
+        }
+
+        a
+        {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+            a:hover
+            {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <a href="#" onclick="onButtonClickPrintResult()">Print result</a>
+    <div id="console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("6. Write a function that groups an array of persons by age, first" +
+            " or last name. The function must return an associative array, with keys - the" +
+            " groups, and values -arrays with persons in this groups.");
+        jsConsole.writeLine("-- Use function overloading (i.e. just one function).");
+        jsConsole.writeLine('');
+
+        function Person(firstName, lastName, age) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.toString = function () {
+                return (this.firstName + ' ' + this.lastName + ', age : ' + this.age);
+            }
+        }
+
+        function group(object, property) {
+
+            switch (property) {
+                case "firstName":
+                case "lastName":
+                case "age":
+                    {
+                        var group = {};
+
+                        object.map(function (obj) {
+                            if (!group[obj[property]]) {
+                                group[obj[property]] = new Array();
+                            }
+                            group[obj[property]].push(obj);
+                        });
+
+                        return group;
+                    }
+                default:
+                    throw new Error("No such property in object.");                    
+            }
+        }
+                
+        var persons = [
+        new Person ( "Gosho", "Petrov", 32 ),
+        new Person ( "Bay", "Ivan", 81 ),
+        new Person ( "Gosho", "Bunny", 72 ),
+        new Person ( "Speedy", "Bunny", 72 ),
+        new Person ( "Bugs", "Bunny", 7 ),
+        new Person ( "Gosho", "Gonzales", 7 ),
+        new Person ( "Speedy", "Gonzales", 72 ),
+        new Person ( "Speedy", "Gonzales", 7 ),
+        new Person ( "Zoro", "Chernev", 87 ),
+        new Person ( "Pesho", "Peshev", 23 ),
+        ];
+
+        function onButtonClickPrintResult() {
+
+            var groupedByFname = group(persons, "firstName");
+            var groupedByAge = group(persons, "age");
+            
+            for (var person in groupedByFname) {
+                jsConsole.writeLine('Group \"firstName\" : ' + person);
+                jsConsole.writeLine(groupedByFname[person]);
+            }
+            jsConsole.writeLine("");
+
+            for (var person in groupedByAge) {
+                jsConsole.writeLine('Group \"age\" : ' + person);
+                jsConsole.writeLine(groupedByAge[person]);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework05</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]
+        {
+            border: 1px solid black;
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 10px;
+        }
+
+        a
+        {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+            a:hover
+            {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <label for="digit">Digit : </label>
+    <input id="digit" type="text" />
+    <br />
+    <a href="#" onclick="onButtonClickNameOfDigit()">The name of digit</a>
+    <div id="console" class="js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("5. Write script that asks for a digit and depending on the input shows" +
+            " the name of that digit (in English) using a switch statement.");
+
+        function onButtonClickNameOfDigit() {
+            var value = jsConsole.readInteger("#digit");
+            
+            jsConsole.write ("The name (in English) of digit is: ");
+            switch (value) {
+                case 0: jsConsole.writeLine("zero"); break;
+                case 1: jsConsole.writeLine("one"); break;
+                case 2: jsConsole.writeLine("two"); break;
+                case 3: jsConsole.writeLine("three"); break;
+                case 4: jsConsole.writeLine("four"); break;
+                case 5: jsConsole.writeLine("five"); break;
+                case 6: jsConsole.writeLine("six"); break;
+                case 7: jsConsole.writeLine("seven"); break;
+                case 8: jsConsole.writeLine("eight"); break;
+                case 9: jsConsole.writeLine("nine"); break;
+                case 10: jsConsole.writeLine("ten"); break;
+                default: {
+                    jsConsole.writeLine("");
+                    jsConsole.writeLine("Only digits from 0 to 10 !"); break;
+                }
+            }            
+        }
+    </script>
+</body>
+</html>

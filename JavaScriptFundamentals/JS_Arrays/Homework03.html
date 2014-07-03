@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homework03</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+        input[type=text]
+        {
+            border: 1px solid black;
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+            font-family: Consolas;
+            margin-bottom: 10px;
+        }
+
+        a
+        {
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+            a:hover
+            {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <a href="#" onclick="onButtonClickPrintAnswer()">Print</a>
+    <div id="js-console" class="js-console js-console">
+        <p></p>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        jsConsole.writeLine("3. Write a script that finds the maximal sequence of equal elements in an array.");
+
+        var array = [2, 1, 1, 2, 3, 3, 2, 2, 2, 1];
+        jsConsole.writeLine("Array : " + array);
+
+        function onButtonClickPrintAnswer() {
+            
+            var sequence = new Array();
+            var count = 0;
+
+            for (var value = 0; value < array.length - 1; value++) {
+
+                var size = 0;
+
+                for (var index = value; index < array.length; index++) {
+
+                    if (array[value] === (array[index])) {
+                        size++;
+                    }
+                    else {
+                        break;
+                    }
+                }
+
+                if ((count < size) && (array[value] === (array[value + 1]))) {
+
+                    count = size;
+                    sequence = [];
+
+                    for (var index = value, seqIndex = 0; index < (value + count) ; index++, seqIndex++) {
+                        sequence[seqIndex] = array[index];
+                    }
+                }
+                else if (count == size) {
+
+                    for (var index = value, seqIndex = 0; index < value + count; index++, seqIndex++) {
+                        sequence[seqIndex] = array[index];
+                    }
+                }
+            }
+
+            jsConsole.writeLine("");
+
+            jsConsole.write("| ");
+            for (var index = 0; index < sequence.length; index++) {
+
+                jsConsole.write(sequence[index] + " | ");
+
+                if ((index + 1) % count == 0) {
+
+                    jsConsole.writeLine(" - the maximal sequence of equal elements in the array.");
+                }
+            }
+
+            jsConsole.writeLine("");
+        }
+    </script>
+</body>
+</html>
