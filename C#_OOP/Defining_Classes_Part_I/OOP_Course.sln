@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Defining_Classes_Part_I", "Defining_Classes_Part_I\Defining_Classes_Part_I.csproj", "{32E5662D-06DF-408F-8259-24AFBD65422C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GSMTest", "GSMTest\GSMTest.csproj", "{8237BD49-0A6C-4FF8-BEE8-59C34FF168EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GSMCallHistoryTest", "GSMCallHistoryTest\GSMCallHistoryTest.csproj", "{915C4068-D567-46AF-BDDA-5D15C640DED9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32E5662D-06DF-408F-8259-24AFBD65422C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32E5662D-06DF-408F-8259-24AFBD65422C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32E5662D-06DF-408F-8259-24AFBD65422C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32E5662D-06DF-408F-8259-24AFBD65422C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8237BD49-0A6C-4FF8-BEE8-59C34FF168EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8237BD49-0A6C-4FF8-BEE8-59C34FF168EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8237BD49-0A6C-4FF8-BEE8-59C34FF168EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8237BD49-0A6C-4FF8-BEE8-59C34FF168EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{915C4068-D567-46AF-BDDA-5D15C640DED9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{915C4068-D567-46AF-BDDA-5D15C640DED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{915C4068-D567-46AF-BDDA-5D15C640DED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{915C4068-D567-46AF-BDDA-5D15C640DED9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
