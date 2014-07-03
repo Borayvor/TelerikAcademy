@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Table</title>
+    <script src="Handlebars/handlebars.min.js"></script>
+    <link href="TableCss/Table.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/x-handlebars-template" id="table-template">
+        <table>
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Title</th>
+                    <th>Date #1</th>
+                    <th>Date #2</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {{#each lectures}}
+                <tr>
+                    <td>{{@index}}</td>
+                    <td>{{title}}</td>
+                    <td>{{firstDate}}</td>
+                    <td>{{secondDate}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </script>
+    <script src="TableScripts/Table.js"></script>
+</body>
+</html>

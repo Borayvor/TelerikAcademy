@@ -1,0 +1,69 @@
+﻿body div
+{
+    margin: 0;
+    padding: 0;
+}
+
+.cool-slider
+{
+    height: 800px;
+    width: 600px;
+    
+    overflow: hidden;
+}
+
+    .cool-slider .slide-element, .cool-slider .slide-element .slide-title
+    {
+        position: absolute;
+    }
+
+        .cool-slider .slide-element .slide-title
+        {
+            background: #ffcc00;
+            width: 100%;
+            height: 34px;
+            text-align: center;
+            line-height: 34px;
+            border: 1px solid black;
+        }
+
+        .cool-slider .slide-element img
+        {
+            height: 800px;
+            width: 600px;
+            margin-top: 40px;
+            border: 1px solid #000;
+        }
+
+    .cool-slider .coolBtn
+    {
+        position: absolute;  
+        top: 10px;      
+        width: 32px;
+        height: 32px;
+        border: 0;
+        opacity: .7;
+        cursor: pointer;
+        left: 20px;
+    }   
+
+        .cool-slider .coolBtn:hover
+        {
+            opacity: 1;
+        }
+
+        .cool-slider .bottomBtn 
+        {
+            top: 856px;
+        }
+
+    .cool-slider .rightBtn
+    {
+        background: url(../images/rightArrow.png) no-repeat;
+        left: 565px;
+    }
+
+    .cool-slider .leftBtn
+    {
+        background: url(../images/leftArrow.png) no-repeat;
+    }

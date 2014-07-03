@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>YouTube</title>   
+</head>
+<body>
+    <script src="Scripts/raphael-min.js"></script>
+    <script>
+        var paper = Raphael(10, 10, 800, 600);
+
+        paper.rect(50, 90, 330, 140)
+                .attr({
+                    fill: 'white',
+                    stroke: 'skyblue',
+                    'stroke-width': 3,
+                });
+
+        paper.text(120, 160, 'You')
+                .attr({
+                    'font-family': 'Arial',
+                    'font-size': 70,
+                    'font-weight': 'bolder',
+                    fill: 'black',
+                });
+
+        paper.rect(190, 95, 180, 130)
+                .attr({
+                    fill: 'red',
+                    stroke: 'none',
+                    r: 30,                   
+                });
+
+        paper.text(280, 160, 'Tube')
+                .attr({
+                    'font-family': 'Arial',
+                    'font-size': 70,
+                    'font-weight': 'bolder',
+                    fill: 'white',
+                });
+
+    </script>
+</body>
+</html>

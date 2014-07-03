@@ -1,0 +1,74 @@
+﻿window.onload = function () {
+    'use strict';
+
+    function getRandomValueInRange(startRange, endRange) {
+
+        return Math.floor(Math.random() * (endRange - startRange + 1)) + startRange;
+    }
+
+    function getRandomValueInRangeInStringPx(startRange, endRange) {
+
+        return getRandomValueInRange(startRange, endRange) + "px";
+    }
+
+    function getRandomColorInString() {
+
+        var red = getRandomValueInRange(0, 255);
+        var green = getRandomValueInRange(0, 255);
+        var blue = getRandomValueInRange(0, 255);
+        var rgb = 'rgb(' + red + ',' + green + ',' + blue + ')';
+
+        return rgb;
+    }
+    
+    function createDiv() {
+
+        var width = getRandomValueInRangeInStringPx(20, 100);
+        var height = getRandomValueInRangeInStringPx(20, 100);
+        var backgroundColor = getRandomColorInString();
+        var fontColor = getRandomColorInString();
+        var borderColor = getRandomColorInString();
+        var borderRadius = getRandomValueInRangeInStringPx(5, 35);
+        var borderWidth = getRandomValueInRangeInStringPx(1, 20);
+        var positionX = getRandomValueInRangeInStringPx(0, 1000);
+        var positionY = getRandomValueInRangeInStringPx(0, 700);
+
+        var div = document.createElement("div");        
+
+        div.style.width = width;
+        div.style.height = height;
+        div.style.backgroundColor = backgroundColor;
+        div.style.color = fontColor;
+        div.style.borderColor = borderColor;
+        div.style.borderRadius = borderRadius;
+        div.style.borderWidth = borderWidth;
+        div.style.left = positionX;
+        div.style.top = positionY;
+        div.style.position = 'absolute';
+        div.style.textAlign = 'center';
+
+        var divTitle = document.createElement("strong");
+        divTitle.innerHTML = 'Div';        
+
+        div.appendChild(divTitle);
+
+        return div;
+    }
+
+    var docFragment;
+
+    function createRandomDivs() {
+
+        var nuberOfDivs = getRandomValueInRange(5, 50);
+
+        docFragment = document.createDocumentFragment();
+
+        for (var i = 0; i < nuberOfDivs; i+=1){
+            docFragment.appendChild(createDiv());
+        }
+
+        document.body.appendChild(docFragment);
+    }
+
+    createRandomDivs();
+}

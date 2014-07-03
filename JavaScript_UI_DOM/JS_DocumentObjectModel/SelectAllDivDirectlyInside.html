@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SelectAllDivDirectlyInside</title>
+</head>
+<body id="body">
+    <header>
+        <p>1. Write a script that selects all the div nodes that are directly inside other div elements</p>
+        <p>-Create a function using querySelectorAll()</p>
+        <p>-Create a function using getElementsByTagName()</p>
+        <p>Look at console.</p>
+    </header>
+    <div>
+        div
+        <div>
+            div0
+            <ul>
+                <li>
+                    <div>
+                        div
+                        <div>
+                            div1
+                            <div>div2
+                            </div>
+                        </div>
+                        <div>
+                            div3
+                            <section>
+                                <div>div</div>
+                            </section>
+                        </div>
+                        <div>div4</div>
+                    </div>
+                    <div>
+                        div
+                        <div>div5</div>
+                    </div>
+                    <div>
+                        div
+                        <div>div6</div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        div
+                        <ul>
+                            <li>
+                                <div>div</div>
+                                <div>div</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        div
+                        <ul>
+                            <li>
+                                <div>div</div>
+                                <div>div</div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div>
+            div7
+            <ul>
+                <li>
+                    <div>
+                        div
+                        <p>P</p>
+                    </div>
+                    <div>
+                        div
+                        <p>P</p>
+                    </div>
+                    <div>
+                        div
+                        <p>P</p>
+                    </div>
+                </li>
+                <li>
+                    <p>P</p>
+                </li>
+            </ul>
+        </div>
+        <div>
+            div8
+            <ul>
+                <li>
+                    <div>
+                        div
+                        <p>
+                            P                            
+                        </p>
+                    </div>
+                    <div>
+                        <p>P</p>
+                    </div>
+                </li>
+                <li>
+                    <p>P</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="Scripts/domScripts.js"></script>
+    <script>
+        useQuerySelectorAll();
+        console.log('--------------------------------------------------------------------');
+        useGetElementsByTagName();
+    </script>
+</body>
+</html>

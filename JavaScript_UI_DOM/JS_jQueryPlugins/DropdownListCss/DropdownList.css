@@ -1,0 +1,25 @@
+﻿body div ul li
+{
+    margin: 0;
+    padding: 0;
+}
+
+
+ul, li
+{
+    list-style: none;
+    padding: 0;
+    margin: 1px 0 0 0px;
+    width: 180px;
+    height: 30px;
+    background-color: yellowgreen;
+    color: #000000;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.dropdown-list-selectionContainer
+{
+    background-color: #ff6a00;
+}

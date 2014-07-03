@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SliderControl</title>
+    <script src="jquery/jquery-2.1.1.min.js"></script>
+    <script src="handlebarsScripts/handlebars.min.js"></script>
+    <link href="SliderControlCss/coolSlider.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="slider-root"></div>
+
+    <script type="text/x-handlebars-template" id="slider-template">
+        <div id="slider">
+            {{#slides}}
+        <div class="slide-element">
+            <strong class="slide-title">{{title}}</strong>
+            <div>
+                <img src="images/{{img}}" />
+            </div>   
+            <strong class="slide-title">{{title}}</strong>        
+        </div>
+            {{/slides}}
+        </div>
+    </script>
+
+    <script src="SliderControlScripts/SliderControl.js"></script>
+</body>
+</html>
