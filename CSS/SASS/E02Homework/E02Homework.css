@@ -1,0 +1,42 @@
+body, div, form, nav, ul, li, a, label, img, input {
+  margin: 0;
+  padding: 0; }
+
+ul {
+  list-style-type: none; }
+
+img {
+  height: 600px;
+  width: 800px;
+  border: 1px solid black;
+  display: none; }
+
+.small_img {
+  display: block;
+  height: 112px;
+  width: 150px;
+  opacity: 0.4;
+  margin-right: 20px; }
+  .small_img:hover {
+    opacity: 1;
+    box-shadow: black 0px 0px 25px, inset black 0px -10px 10px; }
+
+body {
+  padding: 20px; }
+
+form nav > ul {
+  zoom: 1; }
+  form nav > ul:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both; }
+  form nav > ul > li {
+    float: left;
+    display: inline;
+    margin-bottom: 30px; }
+form div > input {
+  display: none; }
+  form div > input:checked + .big_img {
+    display: block; }
+

@@ -1,0 +1,101 @@
+﻿section, div, ul, li, h1, p, img {
+    margin: 0; 
+    padding: 0;
+}
+
+body {
+    padding: 20px;
+}
+section {
+    width:690px;
+    background: #3B3B3B;
+    color: #A9A9A9;
+    font: 14px/1.2 Verdana, sans-serif;
+    padding: 10px;
+    padding-top: 0;
+    border: 1px solid #934e0c;
+    border-radius: 10px;
+}
+
+#head {
+    width:700px; 
+    height:70px; 
+    position:relative; 
+    margin: 0; 
+    background:url(image/from_shadow.png) 0 100% no-repeat;
+}
+
+#head form {
+    width:700px; 
+    height:70px; 
+    margin:0;    
+}
+
+#head form label {
+    width:177px; 
+    height:44px; 
+    font-family:Georgia, "Times New Roman", Times, serif; 
+    font-size:20px; 
+    font-weight:bold; 
+    color: #fff; 
+    background-color:#3B3B3B; 
+    display:block; float:left;       
+    background-image: url(image/monitor.png); 
+    background-repeat:no-repeat; 
+    background-position:left top; 
+    padding-left:60px; 
+    line-height:44px; 
+    margin-top: 7px;
+}
+
+#head form input {
+    width:135px; 
+    height:18px; 
+    float:left; 
+    display:block; 
+    margin: 18px 40px 0 0;     
+}
+
+#head form input.botton {
+    width:56px; 
+    height:28px; 
+    float:left; 
+    background:url(image/button.png) 0 0 no-repeat #3A3A3A; 
+    border:none; 
+    color:#fff; 
+    font:14px/28px Verdana, Arial, Helvetica, sans-serif; 
+    margin: 16px 0 0 30px; 
+    padding:0px;
+}
+
+#body {
+    width:602px; 
+    position:relative;
+    margin-top: 5px;
+}
+
+#body h1 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width:400px; 
+    height:68px; 
+    display:block; 
+    background:#3B3B3B; 
+    color:#FBD61A; 
+    font:28px/68px Georgia, "Times New Roman", Times, serif; 
+    font-weight:normal;
+}
+
+#body p.lasttext {
+    padding:0 0 25px 0;
+}
+
+#body p span {
+    background:#3B3B3B; 
+    color:#fff;
+}
+
+.align_left_top {
+    vertical-align: top;
+    text-align: left;
+}
