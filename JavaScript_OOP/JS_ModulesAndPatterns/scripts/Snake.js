@@ -2,14 +2,14 @@
 var Snake = (function () {
     'use strict';
 
-    var INITIAL_DIRECTION = "d";
+    var INITIAL_DIRECTION = "down";
 
     var coordinates = [
         new ObjectCoordinate(100, 60),
         new ObjectCoordinate(110, 60),
         new ObjectCoordinate(120, 60),
         new ObjectCoordinate(130, 60),
-        new ObjectCoordinate(140, 60)        
+        new ObjectCoordinate(140, 60)
     ];
 
     var speed = 10;
@@ -21,31 +21,30 @@ var Snake = (function () {
     function updateDirection(keyCode) {
         switch (keyCode) {
             case 37:
-                if (direction !== "r") {
-                    direction = "l";
+                if (direction !== "right") {
+                    direction = "left";
                     isKeyPressed = true;
                 }
                 break;
             case 38:
-                if (direction !== "d") {
-                    direction = "u";
+                if (direction !== "down") {
+                    direction = "up";
                     isKeyPressed = true;
                 }
                 break;
             case 39:
-                if (direction !== "l") {
-                    direction = "r";
+                if (direction !== "left") {
+                    direction = "right";
                     isKeyPressed = true;
                 }
                 break;
             case 40:
-                if (direction !== "u") {
-                    direction = "d";
+                if (direction !== "up") {
+                    direction = "down";
                     isKeyPressed = true;
                 }
                 break;
         }
-        move();
     }
 
     function getCoordinates() {
@@ -55,9 +54,8 @@ var Snake = (function () {
     function update() {
         if (isKeyPressed) {
             isKeyPressed = false;
-        } else {
-            move();
         }
+        move();
 
         return isDead;
     }
@@ -66,16 +64,16 @@ var Snake = (function () {
         var currentPosition = coordinates[0];
         var newX, newY;
 
-        if (direction === "d") {
+        if (direction === "down") {
             newX = currentPosition.x;
             newY = currentPosition.y + speed;
-        } else if (direction === "u") {
+        } else if (direction === "up") {
             newX = currentPosition.x;
             newY = currentPosition.y - speed;
-        } else if (direction === "l") {
+        } else if (direction === "left") {
             newX = currentPosition.x - speed;
             newY = currentPosition.y;
-        } else if (direction === "r") {
+        } else if (direction === "right") {
             newX = currentPosition.x + speed;
             newY = currentPosition.y;
         }

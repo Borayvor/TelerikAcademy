@@ -62,8 +62,7 @@
     function checkApple() {
         var currentPosition = Snake.getCoordinates()[0];
         if (currentPosition.equal(Apple.getCoordinate())) {
-            Apple.setCoordinate(ObjectCoordinate.getRandomCoordinate());           
-            //player.score += 1;
+            Apple.setCoordinate(ObjectCoordinate.getRandomCoordinate());  
             Snake.eat();
         }
     }
