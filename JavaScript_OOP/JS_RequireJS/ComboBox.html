@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ComboBox</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="scripts/libs/require.js" data-main="scripts/config"></script>
+</head>
+<body>
+    <button id="selectBtn">SELECT YOUR STORY</button>
+    <div id="combobox-root"></div>
+    <script type="text/x-handlebars-template" id="combobox-template">
+        {{#stories}}
+    <div class="story-box" id="story-{{id}}">
+        <strong class="storyName">{{storyName}}</strong>
+        <p class="storyDescription">{{storyDescription}}</p>
+        <img src="{{imageUrl}}" width="100" />
+    </div>
+        {{/stories}}
+    </script>
+</body>
+</html>
