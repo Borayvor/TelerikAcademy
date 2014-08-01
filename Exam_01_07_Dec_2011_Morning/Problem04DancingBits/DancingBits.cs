@@ -15,6 +15,7 @@
 
             for(int indexSeq = 0; indexSeq < N; indexSeq++)
             {
+                //// convert to binary number, then convert to string, and then add to 'sequenceOfBits'
                 sequenceOfBits += Convert.ToString((int.Parse(Console.ReadLine())), 2);
             }
                         
